@@ -1,0 +1,143 @@
+:root {
+  /* Base Color */
+  --purple-base: #a76aed;
+
+  /* Darker Shades (Top Row) */
+  --purple-0: #a76aed;
+  --purple-10: #965fd5;
+  --purple-20: #8655be;
+  --purple-30: #754aa6;
+  --purple-40: #64408e;
+  --purple-50: #543577;
+  --purple-60: #432a5f;
+  --purple-70: #322047;
+  --purple-80: #21152f;
+  --purple-90: #110b18;
+  --purple-100: #000000;
+
+  /* Lighter Tints (Bottom Row) */
+  --purple-tint-0: #a76aed;
+  --purple-tint-10: #b079ef;
+  --purple-tint-20: #b988f1;
+  --purple-tint-30: #c197f2;
+  --purple-tint-40: #caa6f4;
+  --purple-tint-50: #d3b5f6;
+  --purple-tint-60: #dcc3f8;
+  --purple-tint-70: #e5d2fa;
+  --purple-tint-80: #ede1fb;
+  --purple-tint-90: #f6f0fd;
+  --purple-tint-100: #ffffff;
+}
+
+/* helping classess */
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-15 {
+  gap: 15px;
+}
+
+.gap-18{
+  gap: 18px;
+}
+
+.p-2 {
+  padding: 2px;
+}
+
+.p-3 {
+  padding: 3px;
+}
+
+.box-content {
+  box-sizing: content-box;
+}
+
+.box-border {
+  box-sizing: border-box;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-right-auto {
+  margin-right: auto;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.left-50 {
+  left: 50%;
+}
+
+.right-0 {
+  right: 0;
+}
+
+/* ===========
+THEME CHANGE
+===========  */
+
+/* scroll-btn */
+.scroll-btn {
+  width: 39px;
+  height: 21px;
+  background-color: var(--purple-tint-10);
+  border-radius: 50px;
+  position: relative;
+}
+
+/* scroll ball */
+.scroll-ball {
+  width: 13.5px;
+  height: 13.5px;
+  background-color: var(--purple-tint-100);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  transform: translateY(-50%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* scroll bar active */
+.scroll-ball.move-left {
+  right: 22.5px;
+}
+
+
+/* theme-change-icon */
+.theme-change-icon{
+  stroke: #838383;
+}
+
+/* theme-change-icon on hover */
+.theme-change-icon:hover{
+  stroke: #b079ef;
+}
