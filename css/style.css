@@ -27,12 +27,20 @@
   --purple-tint-80: #ede1fb;
   --purple-tint-90: #f6f0fd;
   --purple-tint-100: #ffffff;
+
+  --grey-shadow : #d9d9d9;
+
+
 }
 
 /* helping classess */
 
 .flex {
   display: flex;
+}
+
+.flex-col{
+  flex-direction: column;
 }
 
 .justify-center {
@@ -79,6 +87,10 @@
   margin-right: auto;
 }
 
+.margin-0{
+  margin: 0;
+}
+
 .clickable {
   cursor: pointer;
 }
@@ -97,6 +109,58 @@
 
 .right-0 {
   right: 0;
+}
+
+.hidden{
+  display: none;
+}
+
+body{
+  padding: 200px;
+}
+
+/* =========
+BODY COLOR
+======== */
+
+.body--dark{
+  background-color: var(--purple-100);
+}
+
+.body--light{
+  background-color: var(--purple-tint-100);
+}
+
+/* ======
+FONT
+====== */
+
+.body--dark .font{
+  color: var(--purple-tint-100);
+}
+
+.body--light .font{
+  color: var(--purple-100);
+}
+
+.font:hover{
+  color: var(--purple-10);
+}
+
+
+/* Sans serif */
+.font--sans-serif{
+  font-family: 'Inconsolata';
+}
+
+/* Serif */
+.font--serif{
+  font-family: 'Lora';
+}
+
+/* Mono */
+.font--mono{
+  font-family: 'Inter';
 }
 
 /* ===========
@@ -140,4 +204,37 @@ THEME CHANGE
 /* theme-change-icon on hover */
 .theme-change-icon:hover{
   stroke: #b079ef;
+}
+
+
+.font-handling-container{
+  width: fit-content;
+}
+
+/* selected font */
+.selected-font{
+  font-size: 18px;
+}
+
+/* font selection container */
+.font-selection-container{
+  width: 160px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  left: 0;
+}
+
+.body--dark .font-selection-container{
+  background-color: var(--purple-100);
+  box-shadow: 0 0 15px 4px var(--purple-base);
+}
+
+.body--light .font-selection-container{
+  background-color: var(--purple-tint-100);
+  box-shadow: 0 0 10px 4px #d9d9d9;
+}
+
+/* font option */
+.font-option{
+  font-size: 18px;
 }

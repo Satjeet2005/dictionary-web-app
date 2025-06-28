@@ -10,3 +10,39 @@ const themeChangeIcon = document.querySelector('.theme-change-icon')
 themeChangeIcon.addEventListener('click', () => {
   scrollBall.classList.toggle('move-left');
 })
+
+// font selection div
+// Trigger : click on selected font
+const selectedFontContainer = document.querySelector('.selected-font-container');
+const fontSelectionContainer = document.querySelector('.font-selection-container');
+const selectedFont = document.querySelector('.selected-font');
+selectedFontContainer.addEventListener('click', () => {
+  fontSelectionContainer.classList.toggle('hidden');
+})
+
+//font selection
+const fontOptions = document.querySelectorAll('.font-option');
+fontOptions.forEach((fontOption) => {
+  fontOption.addEventListener('click',(e) => {
+    selectedFont.innerHTML = e.target.innerHTML;
+    changePageFont(e.target.dataset.font);
+    fontSelectionContainer.classList.add('hidden');
+  })
+})
+
+//font selection container to hide on blur
+document.addEventListener('click', (e) => {
+  if(!fontSelectionContainer.contains(e.target) && !selectedFontContainer.contains(e.target)){
+    fontSelectionContainer.classList.add('hidden');
+  }
+})
+
+//change page font
+function changePageFont(font){
+  const body = document.querySelector('body');
+  body.classList.remove('font--mono');
+  body.classList.remove('font--sans-serif');
+  body.classList.remove('font-serif');
+
+  body.classList.add(`font--${font}`);
+}
