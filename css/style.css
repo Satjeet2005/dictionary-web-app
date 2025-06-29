@@ -116,7 +116,7 @@
 }
 
 body{
-  padding: 200px;
+  /* padding: 200px; */
 }
 
 /* =========
@@ -163,6 +163,14 @@ FONT
   font-family: 'Inter';
 }
 
+/* =======
+NAV RIGHT
+======= */
+
+.nav-right{
+  height: 200px;
+}
+
 /* ===========
 THEME CHANGE
 ===========  */
@@ -195,6 +203,12 @@ THEME CHANGE
   right: 22.5px;
 }
 
+/* theme change container */
+.theme-change-container{
+  border-left: 1px solid #3e3e3e;
+  height: 55px;
+  padding-left: 30px;
+} 
 
 /* theme-change-icon */
 .theme-change-icon{
@@ -206,14 +220,19 @@ THEME CHANGE
   stroke: #b079ef;
 }
 
-
 .font-handling-container{
   width: fit-content;
+}
+
+.selected-font-container{
+  padding-right: 30px;
+  width: 120px;
 }
 
 /* selected font */
 .selected-font{
   font-size: 18px;
+  text-wrap: nowrap;
 }
 
 /* font selection container */

@@ -11,13 +11,22 @@ themeChangeIcon.addEventListener('click', () => {
   scrollBall.classList.toggle('move-left');
 })
 
-// font selection div
-// Trigger : click on selected font
-const selectedFontContainer = document.querySelector('.selected-font-container');
+// =======
+// FONT SELECTION
+// =======
+
+// font selection div Trigger : click on selected font
 const fontSelectionContainer = document.querySelector('.font-selection-container');
+const selectedFontContainer = document.querySelector('.selected-font-container');
 const selectedFont = document.querySelector('.selected-font');
-selectedFontContainer.addEventListener('click', () => {
+selectedFont.addEventListener('click', () => {
   fontSelectionContainer.classList.toggle('hidden');
+})
+
+// Trigger: chevron-down
+const chevronDown = document.querySelector('.chevron-down');
+chevronDown.addEventListener('click',() => {
+    fontSelectionContainer.classList.toggle('hidden');
 })
 
 //font selection
