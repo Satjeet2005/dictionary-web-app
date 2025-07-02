@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dictionary Web App</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,85 +15,283 @@
       rel="stylesheet"
     />
   </head>
-  <body class="margin-0 box-content font--mono body--dark">
+  <body class="box-content margin-auto font--mono body--dark">
+
+    <!-- ======
+    HEADER
+    ======= -->
+
     <header>
       <!-- nav bar -->
       <nav class="flex align-center justify-between">
-        <img src="/assets/logo.svg" alt="logo">
+        <!-- logo -->
+        <a href="#"
+          ><img src="assets/logo.svg" alt="logo" class="logo clickable"
+        /></a>
 
+        <!-- theme change and font selection -->
         <div class="flex align-center right-nav">
-              <div class="font-handling-container relative">
-                <div
-                  class="selected-font-container flex align-center box-content gap-18"
-                >
-                  <p class="selected-font font margin-left-auto clickable">Mono</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="8"
-                    viewBox="0 0 14 8"
-                    class="chevron-down clickable"
-                  >
-                    <path
-                      fill="none"
-                      stroke="#A445ED"
-                      stroke-width="1.5"
-                      d="m1 1 6 6 6-6"
-                    />
-                  </svg>
-                </div>
-      
-                <div
-                  class="font-selection-container flex flex-col gap-15 box-border absolute hidden"
-                >
-                  <p
-                    class="font margin-0 font-option clickable sans-serif font--sans-serif"
-                    data-font="sans-serif"
-                  >
-                    Sans Serif
-                  </p>
-                  <p
-                    class="font margin-0 font-option clickable serif font--serif"
-                    data-font="serif"
-                  >
-                    Serif
-                  </p>
-                  <p
-                    class="font margin-0 font-option clickable mono font--mono"
-                    data-font="mono"
-                  >
-                    Mono
-                  </p>
-                </div>
-              </div>
 
-            <div class="theme-change-container flex align-center gap-18">
-              <div
-              class="scroll-btn flex align-center p-3 box-border relative clickable"
-              >
-                <div class="scroll-ball absolute"></div>
-              </div>
+          <div class="font-handling-container relative">
+            <div
+              class="selected-font-container flex align-center box-content gap-18"
+            >
+              <p class="selected-font font margin-left-auto clickable">Mono</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 22 22"
-                class="theme-change-icon clickable"
+                width="14"
+                height="8"
+                viewBox="0 0 14 8"
+                class="chevron-down clickable"
               >
                 <path
                   fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  stroke="#A445ED"
                   stroke-width="1.5"
-                  d="M1 10.449a10.544 10.544 0 0 0 19.993 4.686C11.544 15.135 6.858 10.448 6.858 1A10.545 10.545 0 0 0 1 10.449Z"
+                  d="m1 1 6 6 6-6"
                 />
               </svg>
             </div>
 
+            <!-- font selection container -->
+            <div
+              class="font-selection-container flex flex-col gap-15 box-border absolute hidden"
+            >
+              <p
+                class="font font-hover margin-0 font-option clickable sans-serif font--sans-serif"
+                data-font="sans-serif"
+              >
+                Sans Serif
+              </p>
+              <p
+                class="font font-hover margin-0 font-option clickable serif font--serif"
+                data-font="serif"
+              >
+                Serif
+              </p>
+              <p
+                class="font font-hover margin-0 font-option clickable mono font--mono"
+                data-font="mono"
+              >
+                Mono
+              </p>
+            </div>
+          </div>
+
+          <!-- theme change -->
+          <div class="theme-change-container flex align-center gap-18">
+            <div
+              class="scroll-btn flex align-center p-3 box-border relative clickable"
+            >
+              <div class="scroll-ball absolute"></div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 22 22"
+              class="theme-change-icon clickable"
+            >
+              <path
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M1 10.449a10.544 10.544 0 0 0 19.993 4.686C11.544 15.135 6.858 10.448 6.858 1A10.545 10.545 0 0 0 1 10.449Z"
+              />
+            </svg>
+          </div>
         </div>
       </nav>
     </header>
+
+    <!-- =====
+    MAIN
+    ===== -->
+    <main>
+      <!-- search keyword -->
+      <section>
+        <!-- input -->
+        <div class="input-container flex justify-between" tabindex="0">
+          <input
+            type="text"
+            id="text-input"
+            class="font"
+            autocomplete="off"
+            placeholder="Search for any word..."
+          />
+
+          <!-- search icon -->
+          <button class="search-button clickable">
+            <img src="assets/icon-search.svg" alt="search-icon" />
+          </button>
+        </div>
+
+        <!-- keyword -->
+        <div class="word-wrapper flex justify-between safe-state">
+          <div>
+            <p class="word font margin-0">jelly</p>  
+            <!-- phonetic -->
+            <p class="word-pro">/'d͡ʒɛl.i/</p>
+          </div>
+
+          <!-- audio section -->
+          <div class="flex flex-col align-center play-button-container">
+            <audio src="" class="audio"></audio>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="75"
+              height="75"
+              viewBox="0 0 75 75"
+              class="play-button margin-left-auto clickable"
+            >
+              <g fill-rule="evenodd">
+                <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
+                <path d="M29 27v21l21-10.5z" />
+              </g>
+            </svg>
+
+            <div class="error-container flex gap-5 hidden">
+              <img src="assets/icon-info.svg" alt="icon-info" />
+              <p class="error-text margin-0 text-center">
+                No Audio Source Available
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- noun section -->
+      <section class="word-meaning-section safe-state">
+        <div class="flex align-center">
+          <span class="word-type font italic">noun</span>
+          <hr />
+        </div>
+
+        <h2 class="word-type-heading">Meaning</h2>
+        <ul class="meaning-container" id="noun-meaning"></ul>
+
+        <div class="flex align-center">
+          <p class="synonyms-heading" id="noun-synonyms-heading">Synonyms</p>
+          <ul
+            class="synonyms-list-container flex gap-10"
+            id="noun-synonyms-list"
+          >
+            <li class="synonyms-list clickable">edit</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- verb section -->
+      <section class="word-meaning-section safe-state">
+        <div class="flex align-center">
+          <span class="word-type font italic">verb </span>
+          <hr />
+        </div>
+
+        <h2 class="word-type-heading">Meaning</h2>
+        <ul class="meaning-container" id="verb-meaning"></ul>
+
+        <div class="flex align-center">
+          <p class="synonyms-heading" id="verb-synonyms-heading">Synonyms</p>
+          <ul
+            class="synonyms-list-container flex gap-10"
+            id="verb-synonyms-list"
+          ></ul>
+        </div>
+      </section>
+
+      <!-- pronoun section` -->
+      <section class="word-meaning-section safe-state">
+        <div class="flex align-center">
+          <span class="word-type font italic">pronoun</span>
+          <hr />
+        </div>
+
+        <h2 class="word-type-heading">Meaning</h2>
+        <ul class="meaning-container" id="pronoun-meaning"></ul>
+
+        <div class="flex align-center">
+          <p class="synonyms-heading" id="pronoun-synonyms-heading">Synonyms</p>
+          <ul
+            class="synonyms-list-container flex gap-10"
+            id="pronoun-synonyms-list"
+          ></ul>
+        </div>
+      </section>
+
+      <!-- interjection meaning -->
+      <section class="word-meaning-section safe-state">
+        <div class="flex align-center">
+          <span class="word-type font italic">interjection</span>
+          <hr />
+        </div>
+
+        <h2 class="word-type-heading">Meaning</h2>
+        <ul class="meaning-container" id="interjection-meaning"></ul>
+
+        <div class="flex align-center">
+          <p class="synonyms-heading" id="interjection-synonyms-heading">
+            Synonyms
+          </p>
+          <ul
+            class="synonyms-list-container flex gap-10"
+            id="interjection-synonyms-list"
+          ></ul>
+        </div>
+      </section>
+
+      <!-- adjective meaning -->
+      <section class="word-meaning-section safe-state">
+        <div class="flex align-center">
+          <span class="word-type font italic">adjective</span>
+          <hr />
+        </div>
+
+        <h2 class="word-type-heading">Meaning</h2>
+        <ul class="meaning-container" id="adjective-meaning"></ul>
+
+        <div class="flex align-center">
+          <p class="synonyms-heading" id="adjective-synonyms-heading">
+            Synonyms
+          </p>
+          <ul
+            class="synonyms-list-container flex gap-10"
+            id="adjective-synonyms-list"
+          ></ul>
+        </div>
+      </section>
+
+      <!-- =====
+      ERROR
+      ====== -->
+      <section class="error-section flex flex-col align-center text-center">
+        <p class="error-emoji">😕</p>
+        <p class="error-heading font">No Definitions Found</p>
+        <p class="error-message font">
+          Sorry pal, we couldn't find definitions for the word you were looking
+          for.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <!-- source -->
+      <section class="source-section">
+        <hr class="safe-state"/>
+        <div class="source-container flex align-center gap-18 safe-state">
+          <p class="margin-0 api-URL-heading">Source</p>
+          <!-- api URL -->
+          <div>
+            <a href="" class="api-URL flex gap-5 align-center clickable" target="_blank">
+              <p class="font api-URL-text">hello</p>
+              <img src="assets/icon-new-window.svg" class="margin-0"
+            /></a>
+          </div>
+        </div>
+      </section>
+    </footer>
   </body>
 
-  <script src="/js/script.js"></script>
+  <script src="js/script.js"></script>
 </html>

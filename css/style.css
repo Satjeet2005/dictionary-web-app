@@ -29,8 +29,17 @@
   --purple-tint-100: #ffffff;
 
   --grey-shadow : #d9d9d9;
+  --dark-input : #1F1F1F;
+  --light-input : #F5F5F5;
+  --dark-hr : #3b3b3b;
+  --light-hr : #e8e8e8;
+  --light-word-type : #6E6E6E;
+
+}
 
 
+*{
+  /* outline: 2px solid red; */
 }
 
 /* helping classess */
@@ -53,6 +62,10 @@
 
 .align-center {
   align-items: center;
+}
+
+.gap-5{
+  gap: 5px;
 }
 
 .gap-10 {
@@ -83,6 +96,10 @@
   box-sizing: border-box;
 }
 
+.margin-auto{
+  margin: auto;
+}
+
 .margin-left-auto {
   margin-left: auto;
 }
@@ -97,6 +114,11 @@
 
 .clickable {
   cursor: pointer;
+}
+
+
+.italic{
+  font-style: italic;
 }
 
 .relative {
@@ -115,12 +137,17 @@
   right: 0;
 }
 
+.text-center{
+  text-align: center;
+}
+
 .hidden{
   display: none;
 }
 
 body{
   padding: 50px 15px;
+  max-width: 750px;
 }
 
 @media screen and (min-width : 576px){
@@ -153,7 +180,7 @@ FONT
   color: var(--purple-100);
 }
 
-.font:hover{
+.font-hover:hover{
   color: var(--purple-10);
 }
 
@@ -177,6 +204,9 @@ FONT
 NAV RIGHT
 ======= */
 
+nav{
+  width: 100%;
+}
 .nav-right{
   height: 200px;
 }
@@ -211,6 +241,14 @@ THEME CHANGE
 /* scroll bar active */
 .scroll-ball.move-left {
   right: 22.5px;
+}
+
+.scroll-btn-transition{
+  background-color: var(--light-word-type);
+}
+
+.scroll-btn-transition:hover{
+  background-color: var(--purple-tint-10);
 }
 
 /* theme change container */
@@ -262,7 +300,7 @@ THEME CHANGE
   width: 160px;
   padding: 8px 20px;
   border-radius: 10px;
-  left: 0;
+  right: 0;
 }
 
 .body--dark .font-selection-container{
@@ -279,3 +317,335 @@ THEME CHANGE
 .font-option{
   font-size: 18px;
 }
+
+/* =========
+INPUT 
+======== */
+
+.input-container{
+  /* padding-right: 25px; */
+  margin-top: 40px;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.body--dark .input-container{
+  background-color: var(--dark-input);
+}
+
+.body--light .input-container{
+  background-color: var(--light-input);
+}
+
+.body--dark .input-container:focus{
+  border-color: white;
+}   
+
+.body--dark .input-container--active{
+    border-color: white;
+}
+
+.body--light .input-container--active{
+    border-color: var(--purple-0);
+}
+
+.body--light .input-container:focus{
+    border-color: var(--purple-0);
+}
+
+#text-input{
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding: 0 25px;
+  font-weight: 700;
+  height: 55px;
+  font-size: 16px;
+}
+
+@media screen and (min-width:756px){
+  #text-input{
+    height: 62px;
+    font-size: 20px;
+  }
+}
+
+/* search button */
+.search-button{
+  background-color: transparent;
+  border: 0;
+  width: 70px;
+  outline: none;
+    border: 2px solid transparent;
+
+}
+
+.body--dark .search-button:focus{
+  border-color: white;
+}
+
+.body--light .search-button:focus{
+  border-color: var(--purple-0);
+}
+
+/* ========
+WORD SECTION
+======== */
+
+.word-wrapper{
+  margin-top: 30px;
+}
+
+/* searched word */
+.word{
+  font-size: 35px;
+  font-weight: 700;
+}
+
+@media screen and (min-width:768px){
+  .word{
+    font-size: 65px;
+  }
+}
+
+/* searched word pronunciation */
+.word-pro{
+  color: var(--purple-base);
+  font-size: 19px;
+  margin-top: 15px;
+}
+
+@media screen and (min-width :768px){
+  .word-pro{
+    margin-top: 10px;
+    font-size: 25px;
+  }
+}
+
+/* play-button */
+
+.play-button path,
+.play-button circle {
+  fill: #A445ED;
+}
+
+.play-button:hover circle{
+  opacity: 1;
+  fill: var(--purple-0);
+}
+
+.play-button:hover path{
+  fill: white;
+}
+
+@media screen and (min-width:768px){
+  .play-button{
+    margin-top: 20px;
+  }
+}
+
+
+/* =======
+ERROR CONTAINER
+======= */
+
+.error-container{
+  padding: 4px;
+  border-radius: 5px;
+  text-wrap: wrap;
+}
+
+.error-text{
+  font-size: 12px;
+  color: #fe8159;
+}
+
+/* =======
+MEANING SECTION
+======= */
+
+.word-meaning-section{
+  margin-top: 20px;
+}
+
+/* word type */
+.word-type{
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media screen and (min-width:768px){
+  .word-type{
+    font-size: 24px;
+  }
+}
+
+
+
+/* horizontal line */
+hr{
+  display: block;
+  width: 100%;
+  height: 0;
+}
+
+.body--dark hr{
+  border: 1px solid var(--dark-hr);
+}
+
+.body--light hr{
+  border: 1px solid var(--light-hr);
+}
+
+/* word type (noun/verb/interjection) */
+.word-type-heading{
+  font-size: 16px;
+  margin-top: 30px;
+  font-weight: 400;
+  color: var(--light-word-type);
+}
+
+@media screen and (min-width:768px){
+  .word-type-heading{
+    font-size: 20px;
+  }
+}
+
+
+/* noun meaning list */
+ul{
+  padding-left: 20px;
+}
+
+.meaning{
+  margin-top: 12px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+@media screen and (min-width:768px){
+  .meaning{
+    font-size: 18px;
+  }
+}
+
+li::marker{
+  color: var(--purple-base);
+  margin: 0;
+}
+
+/* synonyms list */
+.synonyms-list-container{
+  list-style-type: none;
+  flex-wrap: wrap;
+}
+
+.synonyms-heading{
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--light-word-type);
+}
+
+@media screen and (min-width:768px){
+  .synonyms-heading{
+    font-size: 20px;
+  }
+}
+
+.synonyms-list{
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--purple-base);
+}
+
+.synonyms-list:hover{
+  text-decoration: underline;
+}
+
+@media screen and (min-width:768px){
+  .synonyms-list{
+    font-size: 20px;
+  }
+}
+
+/* ==========
+VERB SECTION
+========= */
+
+.verb-meaning-section{
+  margin-top: 20px;
+}
+
+.verb-example{
+  color: var(--light-word-type);
+  margin-top: 10px;
+}
+
+
+/* =======
+ERROR
+======= */
+
+.error-section{
+  margin-top: 80px;
+}
+
+@media screen and (min-width:768px){
+  .error-section{
+    margin-top: 40px;
+  }
+}
+
+.error-emoji{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width:768px){
+  .error-emoji{
+    font-size: 80px;
+  }
+}
+
+.error-heading{
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width:768px){
+  .error-heading{
+    font-size: 24px;
+  }
+}
+
+.error-message{
+  font-size: 16px;
+}
+
+@media screen and (min-width:768px){
+  .error-message{
+    font: 20px;
+  }
+}
+
+/* 
+=======
+API URL
+======= */
+
+.api-URL-heading{
+  font-size: 14px;
+  color: var(--light-word-type);
+}
+
+.api-URL-text{
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+
